@@ -8,18 +8,6 @@ const globals = {
     version: 'Ver. ' + version,
     ver: version
   },
-  auth: {
-    signedIn: false,
-    checkedIn: false,
-    mode: null,
-    admin: false,
-    user: {
-      uid: null,
-      email: null,
-      name: null,
-      room: null
-    }
-  },
   user: {
     uid: null,
     email: null,
@@ -27,6 +15,17 @@ const globals = {
     displayName: null,
     photoURL: null,
     phoneNumber: null
+  },
+  location: {
+    href: location.href,
+    protocol: location.protocol,
+    host: location.host,
+    hostname: location.hostname,
+    port: location.port,
+    pathname: location.pathname,
+    search: location.search,
+    hash: location.hash,
+    origin: location.origin
   }
 }
 Vue.prototype.$g = globals

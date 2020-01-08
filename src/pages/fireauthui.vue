@@ -9,26 +9,26 @@
 </template>
 
 <script>
-import * as firebase from 'firebase/app'
-import * as firebaseui from 'firebaseui-ja'
-const uiConfig = {
-  signInSuccessUrl: '/',
-  signInOptions: [
-    {
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
-    },
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    // firebase.auth.YahooAuthProvider.PROVIDER_ID,
-    'apple.com'
+// import * as firebase from 'firebase/app'
+// import * as firebaseui from 'firebaseui-ja'
+// const uiConfig = {
+//   signInSuccessUrl: '/',
+//   signInOptions: [
+//     {
+//       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+//       signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
+//     },
+//     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+//     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+//     firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+//     firebase.auth.GithubAuthProvider.PROVIDER_ID,
+//     // firebase.auth.YahooAuthProvider.PROVIDER_ID,
+//     'apple.com'
 
-  ]
-  // credentialHelper: firebaseui.auth.CredentialHelper.NONE
-}
-const ui = new firebaseui.auth.AuthUI(firebase.auth())
+//   ]
+//   // credentialHelper: firebaseui.auth.CredentialHelper.NONE
+// }
+// const ui = new firebaseui.auth.AuthUI(firebase.auth())
 // コンポーネント
 // import myComponents from 'components/my-components'
 
@@ -51,7 +51,7 @@ export default {
   },
   mounted () {
     console.log('mounted')
-    ui.start('#firebaseui-auth-container', uiConfig)
+    this.$firebase.ui.start('#firebaseui-auth-container', this.$firebase.uiConfig)
   },
   beforeDestroy () {
     console.log('beforeDestroy')
