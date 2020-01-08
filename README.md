@@ -64,6 +64,8 @@ messagingSenderId="sender-id"
 appID="app-id"
 ```
 ## アイコンフォントの設定
+後で書きます。
+
 ## PWA(Sevice-worker)の設定
 
 ## Install the dependencies
