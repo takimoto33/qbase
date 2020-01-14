@@ -17,30 +17,30 @@ const config = {
 }
 const fireApp = firebase.initializeApp(config)
 
-// FirebaseUIの初期化
-import * as firebaseui from 'firebaseui-ja'
-const uiConfig = {
-  signInFlow: 'popup',
-  // signInSuccessUrl: '/qbase',
-  signInOptions: [
-    {
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
-    },
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID
-  ]
-  // credentialHelper: firebaseui.auth.CredentialHelper.NONE
-}
-const ui = new firebaseui.auth.AuthUI(firebase.auth())
+// FirebaseUIの初期化 これはログインページに持って行く
+// import * as firebaseui from 'firebaseui-ja'
+// const uiConfig = {
+//   // signInFlow: 'popup',
+//   signInSuccessUrl: location.pathname,
+//   signInOptions: [
+//     {
+//       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+//       signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
+//     },
+//     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+//     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+//     firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+//     firebase.auth.GithubAuthProvider.PROVIDER_ID
+//   ]
+//   // credentialHelper: firebaseui.auth.CredentialHelper.NONE
+// }
+// const ui = new firebaseui.auth.AuthUI(firebase.auth())
 
 console.log('>>> Firebase 初期化完了 this.$firebase')
 Vue.prototype.$firebase = {
   auth: fireApp.auth(),
-  ui: ui,
-  uiConfig: uiConfig,
+  // ui: ui,
+  // uiConfig: uiConfig,
   db: fireApp.firestore().collection(process.env.NODE_ENV),
   storage: fireApp.storage()
 }

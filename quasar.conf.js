@@ -16,8 +16,8 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.sass',
-      '../../node_modules/firebaseui-ja/dist/firebaseui.css'
+      'app.sass'
+      // '../../node_modules/firebaseui-ja/dist/firebaseui.css'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras

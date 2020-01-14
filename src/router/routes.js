@@ -14,7 +14,17 @@ const routes = [
     component: () => import('layouts/index.vue'),
     // meta: { requiresShowcase: true },
     children: [
-      { path: '/', component: () => import('pages/loggedin.vue') }
+      { path: '', component: () => import('pages/loggedin.vue') }
+    ]
+  },
+  {
+    path: '/dev',
+    component: () => import('layouts/index.vue'),
+    // meta: { requiresShowcase: true },
+    children: [
+      { path: 'env', component: () => import('pages/dev/env.vue') },
+      { path: 'quasar', component: () => import('pages/dev/quasar.vue') },
+      { path: 'globals', component: () => import('pages/dev/globals.vue') }
     ]
   }
   // {

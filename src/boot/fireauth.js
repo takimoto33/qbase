@@ -11,6 +11,7 @@ export default ({ app, router, Vue }) => {
       Vue.prototype.$g.user.displayName = user.displayName
       Vue.prototype.$g.user.photoURL = user.photoURL
       Vue.prototype.$g.user.phoneNumber = user.phoneNumber
+      Vue.prototype.$g.user.providerData = user.providerData
       router.replace('/loggedin')
     } else {
       console.log('>>> 未認証')

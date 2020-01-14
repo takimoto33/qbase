@@ -6,6 +6,12 @@
         <img alt="アイコン" src="~assets/app-icon.svg" style="width:50vw;max-width:250px;" />
       </div>
       <div>
+        ■ location
+        <pre>
+          {{ location }}
+        </pre>
+      </div>
+      <div>
         ■ process.env
         <pre>
           {{ env }}
@@ -32,6 +38,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
+      location: location.pathname,
       q: this.$q,
       env: process.env
     }

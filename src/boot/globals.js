@@ -14,7 +14,8 @@ const globals = {
     emailVerified: false,
     displayName: null,
     photoURL: null,
-    phoneNumber: null
+    phoneNumber: null,
+    providerData: []
   },
   location: {
     href: location.href,

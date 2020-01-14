@@ -4,7 +4,7 @@
     <div class="text-center">
       <q-btn @click="logout" color="negative" icon="mdi-logout" label="ログアウト" />
       <pre>
-        {{ $g.user }}
+        {{ env }}
       </pre>
       <div class="q-gutter-x-sm">
         <q-avatar>
@@ -38,6 +38,7 @@ export default {
   data () {
     return {
       // user: this.$g.user,
+      env: process.env,
       foo: 'foo',
       bar: 'bar'
     }
