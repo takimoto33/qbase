@@ -1,10 +1,10 @@
 <template>
   <q-page padding>
     <p>実行環境(process.env)</p>
-    <div class="text-center">
+    <div class="xtext-center">
       <q-btn @click="proc2" color="negative" icon="mdi-github-circle" label="テスト" />
       <pre>
-          {{ env }}
+        {{ JSON.stringify(env, null, 4) }}
         </pre>
       <!-- <my-components /> -->
     </div>

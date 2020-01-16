@@ -1,11 +1,12 @@
 <template>
   <q-page padding>
     <p>Globals($g)</p>
-    <div class="text-center">
+    <div class="xtext-center">
       <q-btn @click="proc2" color="negative" icon="mdi-github-circle" label="テスト" />
       <pre>
-          {{ $g }}
-        </pre>
+        {{ JSON.stringify($g, null, 4) }}
+        <!-- {{ $g }} -->
+      </pre>
       <!-- <my-components /> -->
     </div>
   </q-page>

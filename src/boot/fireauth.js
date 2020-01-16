@@ -12,10 +12,10 @@ export default ({ app, router, Vue }) => {
       Vue.prototype.$g.user.photoURL = user.photoURL
       Vue.prototype.$g.user.phoneNumber = user.phoneNumber
       Vue.prototype.$g.user.providerData = user.providerData
-      router.replace('/loggedin')
+      if (location.hash !== '#/loggedin') router.replace('/loggedin')
     } else {
       console.log('>>> 未認証')
-      router.replace('/login')
+      if (location.hash !== '#/login') router.replace('/login')
     }
   })
 }

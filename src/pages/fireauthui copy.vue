@@ -1,38 +1,23 @@
-
 <template>
   <div>
-    <q-layout view="lHh lpr lFf">
-      <q-header elevated class="bg-primary">
-        <q-toolbar>
-          <q-toolbar-title class="text-center">
-            <q-avatar square>
-              <img alt="AppIcon" src="~assets/app-icon.svg" />
-            </q-avatar>
-            {{$g.app.name}} ログイン
-          </q-toolbar-title>
-          <!-- <div>{{ $g.app.version }}</div> -->
-        </q-toolbar>
-      </q-header>
-
-      <q-footer elevated class="bg-grey-10" style="height: 32px">
-        <div class="text-center">Copyright &copy; 2020 Digital Bremens</div>
-      </q-footer>
-
-      <q-page-container>
-        <q-page class="text-center">
-          <div class="row">
-            <div class="col-12 col-sm-5 bg-blue-grey-1 shadow-3">
-              <div class="q-pt-md">下記のいずれかの方法でログインしてください。</div>
-              <div id="firebaseui-auth-container"></div>
-            </div>
-            <div class="col-12 col-sm-7 window-height q-pa-md">
-              <div>下記のいずれかの方法でログインしてください。</div>
-              <div>下記のいずれかの方法でログインしてください。</div>
-            </div>
-          </div>
-        </q-page>
-      </q-page-container>
-    </q-layout>
+    <q-toolbar class="text-center bg-primary text-white shadow-5">
+      <q-avatar>
+        <img alt="AppIcon" src="~assets/app-icon.svg" />
+      </q-avatar>
+      <q-toolbar-title>{{$g.app.title}}ログイン</q-toolbar-title>
+      <div>{{ $g.app.version }}</div>
+    </q-toolbar>
+    <div class="q-mt-xl text-center">
+      <!-- <h5>ログイン</h5> -->
+      <!-- <q-btn @click="proc" color="negative" icon="mdi-github-circle" label="テスト" /> -->
+      <!-- <img alt="Quasar logo" src="~assets/app-icon.svg" style="width:50vw;max-width:200px;" /> -->
+      <!-- <div class="q-pt-lg">上記のいずれかの方法でログインしてください。</div> -->
+      <div>下記のいずれかの方法でログインしてください。</div>
+      <div id="firebaseui-auth-container"></div>
+      <!-- <div>上記のいずれかの方法でログインしてください。</div> -->
+      <div>Copyright &copy; 2020 Digital Bremens</div>
+      <!-- <my-components /> -->
+    </div>
   </div>
 </template>
 

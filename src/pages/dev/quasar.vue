@@ -1,13 +1,11 @@
 <template>
   <q-page padding>
+    <q-btn @click="proc2" color="negative" icon="mdi-github-circle" label="テスト" />
     <p>Quasar($q)</p>
-    <div class="text-center">
-      <q-btn @click="proc2" color="negative" icon="mdi-github-circle" label="テスト" />
-      <pre>
-          {{ $q }}
-        </pre>
-      <!-- <my-components /> -->
-    </div>
+    <pre>
+      {{ JSON.stringify($q, null, 4) }}
+    </pre>
+    <!-- <my-components /> -->
   </q-page>
 </template>
 
@@ -21,6 +19,7 @@ export default {
   },
   data () {
     return {
+      q: this.$q,
       foo: 'foo',
       bar: 'bar'
     }

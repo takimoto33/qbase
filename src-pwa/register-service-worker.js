@@ -1,4 +1,5 @@
 import { register } from 'register-service-worker'
+import { Notify } from 'quasar'
 
 // The ready(), registered(), cached(), updatefound() and updated()
 // events passes a ServiceWorkerRegistration instance in their arguments.
@@ -37,9 +38,23 @@ register(process.env.SERVICE_WORKER_FILE, {
 
   updated (/* registration */) {
     if (process.env.DEV) {
-      console.log('New content is available; please refresh.')
+      console.log('>>> PWA : 新しいバージョンが見つかりました。')
     }
+    Notify.create({
+      message: '新しいバージョンが見つかりました。',
+      icon: 'mdi-cloud-download',
+      closeBtn: '更新する',
+      timeout: 10000,
+      onDismiss () {
+        location.reload(true)
+      }
+    })
   },
+  /*
+    import { Notify } from 'quasar'
+    quasar.conf.js pwa に下記の記述が必要！！
+    workboxOptions: { skipWaiting: true },
+  */
 
   offline () {
     if (process.env.DEV) {
