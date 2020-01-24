@@ -15,7 +15,7 @@
       </q-header>
 
       <q-footer elevated class="bg-grey-10" style="height: 32px">
-        <div class="text-center">Copyright &copy; 2020 Digital Bremens</div>
+        <div class="text-center">{{$g.app.copy}}</div>
       </q-footer>
 
       <q-page-container>
@@ -66,23 +66,23 @@ export default {
   data () {
     return {
       foo: 'foo',
-      bar: 'bar'
+      routePath: this.$route.path
     }
   },
   watch: {
   },
   methods: {
     proc () {
-      console.log('proc', this.foo)
+      console.log('>> proc', this.routePath)
     }
   },
   mounted () {
-    // console.log('mounted', ui, uiConfig)
+    console.log('>> mounted', this.routePath)
     // FirebaseUIの開始
     ui.start('#firebaseui-auth-container', uiConfig)
   },
   beforeDestroy () {
-    console.log('beforeDestroy')
+    console.log('>> beforeDestroy', this.routePath)
   }
 }
 </script>

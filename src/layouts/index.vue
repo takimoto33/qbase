@@ -10,27 +10,62 @@
           icon="mdi-menu"
           aria-label="Menu"
         />
-        <q-toolbar-title>Quasar App</q-toolbar-title>
-        <div>Quasar v{{ $q.version }}</div>
+        <q-toolbar-title>{{$g.app.title}}</q-toolbar-title>
+        <div>{{ $g.app.version }}</div>
         <q-btn round>
           <q-avatar size="md">
             <img :src="$g.user.photoURL" />
           </q-avatar>
+          <q-menu>
+            <div class="bg-grey-2">
+              <div class="row no-wrap q-pa-md">
+                <div class="column">
+                  <div class="text-h6 q-mb-md">ログイン情報</div>
+                  <div>Quasar：{{$q.version}}</div>
+                  <div>言語：{{$q.lang.getLocale()}}</div>
+                  <div>環境：{{$q.platform.is.platform}} {{$q.platform.is.name}} {{$q.platform.is.versionNumber}}</div>
+                </div>
+                <q-separator vertical inset color="grey-5" class="q-mx-md" />
+                <div class="column items-center">
+                  <q-avatar size="72px">
+                    <img :src="$g.user.photoURL" />
+                  </q-avatar>
+                  <div class="text-subtitle1 q-mt-md q-mb-xs">{{$g.user.displayName}}</div>
+                </div>
+              </div>
+              <div class="q-px-md">
+                <div>UID：{{$g.user.uid}}</div>
+                <div>メール：{{$g.user.email}}</div>
+              </div>
+              <div class="q-pa-md text-center">
+                <q-btn @click="logout" color="negative" label="ログアウト" icon-right="mdi-logout" />
+              </div>
+            </div>
+          </q-menu>
         </q-btn>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above elevated content-class="bg-grey-2">
-      <q-img class="absolute-top" src="~assets/texture01.svg" style="height: 150px">
-        <div class="absolute-bottom bg-transparent">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img :src="$g.user.photoURL" />
-          </q-avatar>
-          <div class="text-weight-bold">{{$g.user.displayName}}</div>
-          <div>{{$g.user.email}}</div>
+      <div class="bg-grey-9 text-grey-2 absolute-top shadow-3" style="height: 130px">
+        <div class="row no-wrap q-pa-md">
+          <div class="column text-caption">
+            <div class="text-subtitle1">{{$g.user.displayName}}</div>
+            <div>{{$g.user.email}}</div>
+            <div>Quasar：{{$q.version}}</div>
+            <div>言語：{{$q.lang.getLocale()}}</div>
+            <div>環境：{{$q.platform.is.platform}} {{$q.platform.is.name}} {{$q.platform.is.versionNumber}}</div>
+          </div>
+          <q-separator vertical inset color="grey-6" class="q-mx-md" />
+          <div class="column items-center q-ma-sm">
+            <q-avatar square size="72px">
+              <img :src="$g.user.photoURL" />
+            </q-avatar>
+            <!-- <div class="text-subtitle1 q-mt-md q-mb-xs">{{$g.user.displayName}}</div> -->
+          </div>
         </div>
-      </q-img>
-      <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px">
+      </div>
+      <q-scroll-area style="height: calc(100% - 130px); margin-top: 130px">
         <q-list padding>
           <!-- <q-item-label header>Essential Links</q-item-label> -->
           <q-expansion-item
@@ -164,6 +199,15 @@ export default {
       leftDrawerOpen: false,
       DEV: process.env.DEV,
       insetLevel: 0.5
+    }
+  },
+  methods: {
+    logout () {
+      this.$firebase.auth.signOut().then(function () {
+        console.log('>>> logout 完了')
+      }).catch(function (error) {
+        console.log('>>> logout エラー', error)
+      })
     }
   }
 }

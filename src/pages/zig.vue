@@ -19,27 +19,27 @@ export default {
   data () {
     return {
       foo: 'foo',
-      bar: 'bar'
+      routePath: this.$route.path
     }
   },
   watch: {
   },
   methods: {
     proc1: function () {
-      console.log('proc1', this.foo)
+      console.log('>> proc1', this.routePath)
     },
     proc2 () { // 基本はコレ
-      console.log('proc2', this.foo)
+      console.log('>> proc2', this.routePath)
     },
     proc3: () => {
-      console.log('proc3', 'foo')
+      console.log('>> proc3', this.routePath)
     }
   },
   mounted () {
-    console.log('mounted')
+    console.log('>> mounted', this.routePath)
   },
   beforeDestroy () {
-    console.log('beforeDestroy')
+    console.log('>> beforeDestroy', this.routePath)
   }
 }
 </script>

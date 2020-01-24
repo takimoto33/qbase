@@ -6,7 +6,8 @@ const globals = {
     name: 'QBase',
     title: 'Quasar テンプレート',
     version: 'Ver. ' + version,
-    ver: version
+    ver: version,
+    copy: 'Copyright \u00A9 2020 Digital Bremens'
   },
   user: {
     uid: null,

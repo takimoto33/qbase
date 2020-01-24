@@ -1,15 +1,10 @@
 <template>
   <!-- <div class="flex flex-center"> -->
   <!-- <div class="text-center"> -->
-  <div class="fixed-center text-center">
-    AAAAAAAAAAA
-    <div class="col-lg-3 col-sm-6 col-sm-10 col-xs-12">BBBBBBBBBBB</div>EEEEEEEEEEEEE
-    <div class="col-lg-3 col-sm-6 col-sm-10 col-xs-12">
-      <div>
-        <img alt="アイコン" src="~assets/app-icon.svg" style="width:50vw;max-width:250px;" />
-      </div>
+  <div>
+    <div class="fixed-center text-center">
+      <img alt="アイコン" src="~assets/app-icon.svg" style="width:50vw;max-width:250px;" />
     </div>
-    <div class="col-lg-3 col-sm-6 col-sm-10 col-xs-12">CCCCCCCCCCCCC</div>DDDDDDDDDDDD
   </div>
 </template>
 
@@ -20,8 +15,28 @@ export default {
     return {
       location: location.pathname,
       q: this.$q,
-      env: process.env
+      env: process.env,
+      routePath: this.$route.path
     }
+  },
+  watch: {
+  },
+  methods: {
+    proc1: function () {
+      console.log('>> proc1', this.routePath)
+    },
+    proc2 () { // 基本はコレ
+      console.log('>> proc2', this.routePath)
+    },
+    proc3: () => {
+      console.log('>> proc3', this.routePath)
+    }
+  },
+  mounted () {
+    console.log('>> mounted', this.routePath)
+  },
+  beforeDestroy () {
+    console.log('>> beforeDestroy', this.routePath)
   }
 }
 </script>

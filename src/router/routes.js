@@ -10,6 +10,11 @@ const routes = [
     // meta: { requiresSignin: true }
   },
   {
+    path: '/regist',
+    component: () => import('pages/regist.vue')
+    // meta: { requiresSignin: true }
+  },
+  {
     path: '/loggedin',
     component: () => import('layouts/index.vue'),
     // meta: { requiresShowcase: true },
@@ -27,15 +32,6 @@ const routes = [
       { path: 'globals', component: () => import('pages/dev/globals.vue') }
     ]
   }
-  // {
-  //   path: '/',
-  //   component: () => import('layouts/index.vue'),
-  //   children: [
-  //     { path: '', component: () => import('pages/index.vue') },
-  //     { path: '/login', component: () => import('pages/fireauthui.vue') },
-  //     { path: '/loggedin', component: () => import('pages/loggedin.vue') }
-  //   ]
-  // }
 ]
 
 // Always leave this as last one

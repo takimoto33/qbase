@@ -1,29 +1,6 @@
 <template>
   <q-page padding>
     <p>ログイン完了</p>
-    <div class="text-center">
-      <q-btn @click="logout" color="negative" icon="mdi-logout" label="ログアウト" />
-      <pre>
-        {{ env }}
-      </pre>
-      <div class="q-gutter-x-sm">
-        <q-avatar>
-          <img :src="$g.user.photoURL" />
-        </q-avatar>
-        <q-avatar size="md">
-          <img :src="$g.user.photoURL" />
-        </q-avatar>
-        <q-avatar size="100px">
-          <img :src="$g.user.photoURL" />
-        </q-avatar>
-        <q-btn round>
-          <q-avatar size="40px">
-            <img :src="$g.user.photoURL" />
-          </q-avatar>
-        </q-btn>
-      </div>
-      <!-- <my-components /> -->
-    </div>
   </q-page>
 </template>
 
@@ -40,7 +17,7 @@ export default {
       // user: this.$g.user,
       env: process.env,
       foo: 'foo',
-      bar: 'bar'
+      routePath: this.$route.path
     }
   },
   watch: {
@@ -48,17 +25,17 @@ export default {
   methods: {
     logout () {
       this.$firebase.auth.signOut().then(function () {
-        console.log('logout 完了')
+        console.log('>> logout 完了', this.routePath)
       }).catch(function (error) {
-        console.log('logout エラー', error)
+        console.log('>> logout エラー', this.routePath, error)
       })
     }
   },
   mounted () {
-    console.log('mounted')
+    console.log('>> mounted', this.routePath)
   },
   beforeDestroy () {
-    console.log('beforeDestroy')
+    console.log('>> beforeDestroy', this.routePath)
   }
 }
 </script>
