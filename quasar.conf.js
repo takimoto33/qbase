@@ -58,6 +58,11 @@ module.exports = function (ctx) {
       // preloadChunks: false,
       // extractCSS: false,
 
+      // 本番でのコンソール出力を無くす
+      uglifyOptions: {
+        compress: { drop_console: true }
+      },
+
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
         cfg.module.rules.push({
