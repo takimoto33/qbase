@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <p>ログイン完了</p>
+    <p>QRコード生成</p>
   </q-page>
 </template>
 
@@ -23,12 +23,8 @@ export default {
   watch: {
   },
   methods: {
-    logout () {
-      this.$firebase.auth.signOut().then(function () {
-        console.log('>> logout 完了', this.routePath)
-      }).catch(function (error) {
-        console.log('>> logout エラー', this.routePath, error)
-      })
+    method1 () {
+      console.log('>> method1', this.routePath)
     }
   },
   mounted () {

@@ -15,11 +15,14 @@ const routes = [
     // meta: { requiresSignin: true }
   },
   {
-    path: '/loggedin',
+    path: '/home',
     component: () => import('layouts/index.vue'),
     // meta: { requiresShowcase: true },
     children: [
-      { path: '', component: () => import('pages/loggedin.vue') }
+      { path: '', component: () => import('pages/home/index.vue') },
+      { path: 'proc01', component: () => import('pages/home/proc01.vue') },
+      { path: 'qr-generator', component: () => import('pages/home/qr-generator.vue') },
+      { path: 'qr-reader', component: () => import('pages/home/qr-reader.vue') }
     ]
   },
   {

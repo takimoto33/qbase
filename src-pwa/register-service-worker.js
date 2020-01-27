@@ -14,25 +14,25 @@ register(process.env.SERVICE_WORKER_FILE, {
 
   ready () {
     if (process.env.DEV) {
-      console.log('App is being served from cache by a service worker.')
+      console.log('>>> PWA : App is being served from cache by a service worker.')
     }
   },
 
   registered (/* registration */) {
     if (process.env.DEV) {
-      console.log('Service worker has been registered.')
+      console.log('>>> PWA : Service worker has been registered.')
     }
   },
 
   cached (/* registration */) {
     if (process.env.DEV) {
-      console.log('Content has been cached for offline use.')
+      console.log('>>> PWA : Content has been cached for offline use.')
     }
   },
 
   updatefound (/* registration */) {
     if (process.env.DEV) {
-      console.log('New content is downloading.')
+      console.log('>>> PWA : New content is downloading.')
     }
   },
 
@@ -58,13 +58,13 @@ register(process.env.SERVICE_WORKER_FILE, {
 
   offline () {
     if (process.env.DEV) {
-      console.log('No internet connection found. App is running in offline mode.')
+      console.log('>>> PWA : No internet connection found. App is running in offline mode.')
     }
   },
 
   error (err) {
     if (process.env.DEV) {
-      console.error('Error during service worker registration:', err)
+      console.error('>>> PWA : Error during service worker registration:', err)
     }
   }
 })
