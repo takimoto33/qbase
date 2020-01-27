@@ -70,18 +70,64 @@
       <q-scroll-area style="height: calc(100% - 130px); margin-top: 130px">
         <q-list padding>
           <!-- <q-item-label header>Essential Links</q-item-label> -->
-          <q-item clickable v-ripple to="/home" active-class="my-menu-link">
-            <q-item-section avatar>
-              <q-icon name="mdi-home" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>ホーム</q-item-label>
-              <q-item-label caption>トップページ</q-item-label>
-            </q-item-section>
-            <q-item-section avatar>
-              <q-icon name="mdi-menu-right" />
-            </q-item-section>
-          </q-item>
+          <q-expansion-item
+            v-if="DEV"
+            expand-separator
+            icon="mdi-android-debug-bridge"
+            label="開発メニュー"
+            caption="Developers Only"
+            :content-inset-level="insetLevel"
+          >
+            <q-item clickable v-ripple to="/" active-class="my-menu-link">
+              <q-item-section avatar>
+                <q-icon name="mdi-home" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>ルート</q-item-label>
+                <q-item-label caption>プライマリページ</q-item-label>
+              </q-item-section>
+              <q-item-section avatar>
+                <q-icon name="mdi-menu-right" />
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-ripple to="/login" active-class="my-menu-link">
+              <q-item-section avatar>
+                <q-icon name="mdi-login" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>ログイン</q-item-label>
+                <q-item-label caption>ログインページ</q-item-label>
+              </q-item-section>
+              <q-item-section avatar>
+                <q-icon name="mdi-menu-right" />
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-ripple to="/regist" active-class="my-menu-link">
+              <q-item-section avatar>
+                <q-icon name="mdi-account-plus" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>ユーザー登録</q-item-label>
+                <q-item-label caption>レジストページ</q-item-label>
+              </q-item-section>
+              <q-item-section avatar>
+                <q-icon name="mdi-menu-right" />
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-ripple to="/home" active-class="my-menu-link">
+              <q-item-section avatar>
+                <q-icon name="mdi-home-account" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>ユーザーホーム</q-item-label>
+                <q-item-label caption>ユーザートップページ</q-item-label>
+              </q-item-section>
+              <q-item-section avatar>
+                <q-icon name="mdi-menu-right" />
+              </q-item-section>
+            </q-item>
+          </q-expansion-item>
+
           <q-item clickable v-ripple to="/home/proc01" active-class="my-menu-link">
             <q-item-section avatar>
               <q-icon name="mdi-shield-account" />
