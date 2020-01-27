@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.37b153a7daff3072897d975b5adb3804.js"
+  "precache-manifest.04f2660346da2ac6f35a4c6c31c7d810.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "qbase"});
