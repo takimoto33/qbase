@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <p>QRコード読込</p>
+    <p>QRコード読込ブランチ</p>
   </q-page>
 </template>
 

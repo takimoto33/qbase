@@ -1,10 +1,10 @@
 import Vue from 'vue'
 
-const version = '0.0.0'
+const version = '0.0.1'
 const globals = {
   app: {
-    name: 'QBase',
-    title: 'Quasar テンプレート',
+    name: 'QRcode',
+    title: 'QRコード',
     version: 'Ver. ' + version,
     ver: version,
     copy: 'Copyright \u00A9 2020 Digital Bremens'

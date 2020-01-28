@@ -1,9 +1,9 @@
 {
-  "name": "qbase",
+  "name": "QRcode",
   "version": "0.0.1",
-  "description": "Quasar Base Template",
-  "productName": "Quasar Base",
-  "cordovaId": "jp.gr.bremens.qbase",
+  "description": "QR code Test",
+  "productName": "QRcode",
+  "cordovaId": "jp.gr.bremens.qrcode",
   "capacitorId": "",
   "author": "Hideki Takimoto <takimoto@bremens.gr.jp>",
   "private": true,

@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <p>QRコード生成</p>
+    <p>QRコード生成ブランチ</p>
   </q-page>
 </template>
 
