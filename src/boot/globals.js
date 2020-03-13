@@ -16,7 +16,11 @@ const globals = {
     displayName: null,
     photoURL: null,
     phoneNumber: null,
-    providerData: []
+    providerData: [],
+    auth: {
+      level: 0,
+      expire: null
+    }
   },
   location: {
     href: location.href,

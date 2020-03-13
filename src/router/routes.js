@@ -6,18 +6,18 @@ const routes = [
   },
   {
     path: '/login',
-    component: () => import('pages/fireauthui.vue')
-    // meta: { requiresSignin: true }
+    component: () => import('pages/fireauthui.vue'),
+    meta: { requiresMode: 'login' }
   },
   {
     path: '/regist',
-    component: () => import('pages/regist.vue')
-    // meta: { requiresSignin: true }
+    component: () => import('pages/regist.vue'),
+    meta: { requiresMode: 'regist' }
   },
   {
     path: '/home',
     component: () => import('layouts/index.vue'),
-    // meta: { requiresShowcase: true },
+    meta: { requiresMode: 'user' },
     children: [
       { path: '', component: () => import('pages/home/index.vue') },
       { path: 'proc01', component: () => import('pages/home/proc01.vue') },
@@ -28,7 +28,7 @@ const routes = [
   {
     path: '/dev',
     component: () => import('layouts/index.vue'),
-    // meta: { requiresShowcase: true },
+    meta: { requiresMode: 'admin' },
     children: [
       { path: 'env', component: () => import('pages/dev/env.vue') },
       { path: 'quasar', component: () => import('pages/dev/quasar.vue') },

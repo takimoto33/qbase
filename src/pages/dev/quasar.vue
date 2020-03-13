@@ -32,6 +32,7 @@ export default {
     },
     proc2 () { // 基本はコレ
       console.log('>> proc2', this.routePath)
+      this.$q.dark.toggle()
     },
     proc3: () => {
       console.log('>> proc3', this.routePath)

@@ -12,12 +12,13 @@
         />
         <q-toolbar-title>{{$g.app.title}}</q-toolbar-title>
         <div>{{ $g.app.version }}</div>
+        <q-btn dence flat round icon="mdi-theme-light-dark" @click="$q.dark.toggle()" />
         <q-btn dence flat round icon="mdi-account">
           <!-- <q-avatar square size="md">
             <img :src="$g.user.photoURL" />
           </q-avatar>-->
           <q-menu>
-            <div class="bg-grey-2">
+            <div>
               <div class="row no-wrap q-pa-md">
                 <div class="column">
                   <div class="text-h6 q-mb-md">ログイン情報</div>
@@ -48,7 +49,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above elevated content-class="bg-grey-2">
+    <q-drawer v-model="leftDrawerOpen" show-if-above elevated>
       <div class="bg-grey-9 text-grey-2 absolute-top shadow-3" style="height: 130px">
         <div class="row no-wrap q-pa-md">
           <div class="column text-caption">
@@ -185,7 +186,7 @@
                 <q-icon name="mdi-menu-right" />
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple to="/dev/quasar">
+            <q-item clickable v-ripple to="/dev/quasar" active-class="my-menu-link">
               <q-item-section avatar>
                 <q-icon name="mdi-star" />
               </q-item-section>
@@ -197,7 +198,7 @@
                 <q-icon name="mdi-menu-right" />
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple to="/dev/globals">
+            <q-item clickable v-ripple to="/dev/globals" active-class="my-menu-link">
               <q-item-section avatar>
                 <q-icon name="mdi-earth" />
               </q-item-section>
@@ -308,4 +309,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.my-menu-linkx
+  color: black
+  background: #aaaaaa
 </style>
